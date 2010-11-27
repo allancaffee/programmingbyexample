@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<a href="{{url_for('project_new')}}">Add a project</a>
+
+   <h1>Suggested Projects</h1>
+  {% if session.logged_in %}
+    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+      <dl>
+        <dt>Title:
+        <dd><input type=text size=30 name=title>
+        <dt>Text:
+        <dd><textarea name=text rows=5 cols=40></textarea>
+        <dd><input type=submit value=Share>
+      </dl>
+    </form>
+  {% endif %}
+    <table>
+        <tr>
+        <td>Project</td>
+        <td>One-liner</td>
+        <td>Rating</td>
+        </tr>
+    {% for project in projects %}
+        <tr class="project">
+        <td class="project_name">{{project.link |safe}}</td>
+        <td class="project_oneliner">{{project.oneliner}}</td>
+        <td class="project_rating">{{project.rating}}</td>
+        </tr>
+  {% endfor %}
+  </table>
+{% endblock %}
