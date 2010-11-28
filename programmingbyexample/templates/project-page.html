@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
    <h1>{{project.name}}</h1>
-   <a href="{{url_for('project_edit', id=project.id)}}">Edit<a>
+   <a href="{{url_for('projects.edit', id=project.id)}}">Edit<a>
    <br />
    <em>Rating</em>: {{project.rating}}<br />
    <h2>{{project.oneliner}}</h2>

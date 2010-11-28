@@ -47,7 +47,7 @@ class Project(Base, Policies):
         FIXME: It's kind of terrible having this here.
         """
 
-        return '<a href="%s">%s</a>' % (flask.url_for('project_get', id=self.id),
+        return '<a href="%s">%s</a>' % (flask.url_for('projects.get', id=self.id),
                                         self.name)
 
     @property

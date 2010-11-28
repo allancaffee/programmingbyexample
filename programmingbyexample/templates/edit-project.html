@@ -2,22 +2,9 @@
 {% block body %}
 <h1>Create a new project idea.</h1>
 
-<form method="POST" action="{{ url_for('project_submit') }}">
-  <dl>
-    <dt>Name:</dt>
-    <dd><input name="name" type="text"></input></dd>
-
-    <dt>One-Liner:</dt>
-    <dd><input name="oneliner" type="text"></input></dd>
-
-    <dt>Description:</dt>
-    {% if project: %}
-    <dd><textarea name="description" rows="5" cols="40"></textarea></dd>
-    {% else: %}
-    <dd><textarea name="description" rows="5" cols="40" value="{{project.description}}"></textarea></dd>
-    {% endif %}
-
-    <dt><input name="submit" value="Submit" type="submit"></input></dt>
-  </dl>
+<form method="POST" action="{{ url_for('projects.submit') }}">
+  {{ field_set.render() |safe }}
+  <br />
+  <input name="submit" value="Submit" type="submit"></input>
 </form>
 {% endblock body %}

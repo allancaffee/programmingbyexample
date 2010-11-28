@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+
+   <h1>Welcome!</h1>
+
+   <p>Welcome to <em>programmingbyexample</em>.  This site is intended
+   to help beginning programmers and hardened veterans to learn new
+   programming languages.  If you know one programming language it is
+   usually pretty straightforward to learn another.  But the most
+   important aspect of learning a new language is to learn the idioms
+   involved.  By learning from the examples of others you can approach
+   seemingly simple problems in a way that's natural to the target
+   language.
+   </p>
+
+   <a href="{{url_for('projects.pages')}}">View projects.</a>
+{% endblock %}
